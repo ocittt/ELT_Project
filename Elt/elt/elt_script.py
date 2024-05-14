@@ -39,7 +39,6 @@ destination_config = {
     'host': 'destination_db'
 }
 
-# Use pg_dump to dump the source database to a SQL file
 dump_to_source_db_command = [
     'pg_dump', 
     '-h', source_config['host'],
