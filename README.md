@@ -24,8 +24,8 @@ This repository hosts a customized Extract, Load, Transform (ELT) project, showc
 ## Repository Structure
 - **`docker/`**: Contains Docker configuration files for setting up the environment.
 - **`airflow/dags/`**: Airflow DAG definitions for managing the workflow.
-- **`dbt/`**: dbt project directory with models, macros, and configuration files.
-- **`scripts/`**: Additional scripts for managing data extraction and loading.
+- **`custom_postgres/`**: dbt project directory with models, macros, and configuration files.
+- **`custom_postgres/macros/`**: Additional scripts for managing data extraction and loading.
 
 ## Getting Started
 ### Prerequisites
