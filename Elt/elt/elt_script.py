@@ -36,7 +36,7 @@ destination_config = {
     'dbname': 'destination_db',
     'user': 'postgres',
     'password': 'secret',
-    'host': 'destination_db'
+    'host': 'destination_postgres'
 }
 
 # Use pg_dump to dump the source database to a SQL file

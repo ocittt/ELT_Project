@@ -16,7 +16,7 @@ default_args ={
     'email_on_retry': False,  
 }
 
-def run_elt_scirpt():
+def run_elt_script():
     script_path = "/opt/airflow/elt/elt_script.py"
     result = subprocess.run(["python", script_path],
                             capture_output=True, text=True)
@@ -29,19 +29,19 @@ dag = DAG(
     'elt_and_dbt',
     default_args=default_args,
     description= 'An ELT workflow with dbt',
-    start_date=datetime(2024, 5, 15),
+    start_date=datetime(2024, 5, 17),
     catchup=False,
 )
 
 
 t1 = PythonOperator(
-    task_id="run_elt_script",
-    python_callable=run_elt_scirpt,
-    dag=dag
+    task_id='run_elt_script',
+    python_callable=run_elt_script,
+    dag=dag,
 )
 
 t2 = DockerOperator(
-    task_id="dbt_run",
+    task_id='dbt_run',
     image='ghcr.io/dbt-labs/dbt-postgres:1.4.7',
     command= 
       [
@@ -56,10 +56,10 @@ t2 = DockerOperator(
       docker_url="unix://var/run/docker.sock",
       network_mode="bridge",
       mounts=[
-          Mount(source='/Users/Lenovo/Desktop/Learning_File/Data_Engineering/ELT_Project/Elt/custom_postgres',
+          Mount(source='/c/Users/Lenovo/Desktop/Learning_File/Data_Engineering/ELT_Project/Elt/custom_postgres',
                 target='/dbt', type='bind'),
-          Mount(source='/Users/Lenovo/.dbt',
-                target='/Users/Lenovo', type='bind')
+          Mount(source='/c/Users/Lenovo/.dbt',
+                target='/root', type='bind')
       ],
       dag=dag
 )
