@@ -1,6 +1,6 @@
 # ELT Project
 
-This repository contains a custom Extract, Load, Transform (ELT) project that utilizes Docker and PostgreSQL to demonstrate a simple ELT process, with several tools been used, you can check out the each branch for the category in each tools used!
+This repository contains a custom Extract, Load, Transform (ELT) project that utilizes Docker and PostgreSQL to demonstrate a simple ELT process, with several tools including DBT, airflow and airbyte(ongoing), you can check out the each branch for the category in each tools been used!
 
 
 1. Ensure you have Docker and Docker Compose installed on your machine.
