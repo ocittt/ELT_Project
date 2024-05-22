@@ -1,15 +1,15 @@
 from datetime import datetime
 from airflow import DAG
 from docker.types import Mount
+
 from airflow.utils.dates import days_ago
 from airflow.providers.airbyte.operators.airbyte import AirbyteTriggerSyncOperator
 
 
 
 from airflow.providers.docker.operators.docker import DockerOperator
-import subprocess
 
-CONN_ID= ''
+CONN_ID= '5107d14d-8d1e-491b-8bbf-dae1fd601b42'
 
 
 default_args ={
@@ -25,7 +25,7 @@ dag = DAG(
     'elt_and_dbt',
     default_args=default_args,
     description= 'An ELT workflow with dbt',
-    start_date=datetime(2024, 5, 17),
+    start_date=datetime(2024, 5, 22),
     catchup=False,
 )
 
